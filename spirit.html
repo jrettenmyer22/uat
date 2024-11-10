@@ -86,8 +86,8 @@
 
 		footer {
 			background-color: #191919;
-			padding: 8px;
-			text-align: center;
+			padding: 8px 20px;
+			text-align: left;
 			color: #fff;
 			box-sizing: border-box;
 		}
@@ -96,10 +96,20 @@
 			line-height: 2;
 		}
 
+		.selected {
+			background: #fffde6;
+		}
+
+		.user_story {
+			padding: 8px 14px;
+			box-sizing: border-box;
+		}
+
 		.user_story div {
 			text-align: right;
 			padding: 10px;
 		}
+
 		button {
 			padding: 6px 12px;
 		}
@@ -133,8 +143,10 @@
 				<li>Assess response time for typical customer questions.</li>
 				<li>Check the AI's capability to escalate complex issues to human agents.</li>
 			</ul>
-
+			<p>
 			<h2>Testing Scenarios for Spirit Airlines AI Agent</h2>
+			</p>
+			<hr>
 			<div id="voucher" class="user_story">
 				<h3>Scenario: Inquiry about Voucher Usage</h3>
 				<ul>
@@ -642,6 +654,12 @@
 				// Fallback if history.pushState is not supported
 				window.location.hash = hash;
 			}
+			const stories = document.querySelectorAll('.user_story');
+			for (let e of stories) {
+				e.classList.remove('selected');
+			}
+			document.getElementById(hash).classList.add('selected');
+			chat.setChatRegistrationField('schema.conversation.custom.aiAgentFixture', hash);
 		}
 	</script>
 
