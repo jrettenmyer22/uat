@@ -72,7 +72,7 @@
 
 		main {
 			flex: 1;
-			padding: 80px 40px;
+			padding: 30px 40px;
 			text-align: left;
 			box-sizing: border-box;
 
@@ -94,6 +94,14 @@
 
 		li {
 			line-height: 2;
+		}
+
+		.user_story div {
+			text-align: right;
+			padding: 10px;
+		}
+		button {
+			padding: 6px 12px;
 		}
 	</style>
 </head>
@@ -137,8 +145,11 @@
 					<li><strong>Expected Resolution:</strong> The guest is provided with detailed information on how to redeem the voucher, including applicable flights, booking process, and any terms and conditions.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest receives clear instructions on how to use the voucher, including any restrictions or expiration dates.</li>
 				</ul>
-				<button onclick="loadContext('voucher')">Load Context</button>
+				<div>
+					<button onclick="loadContext('voucher')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="reservation_credit" class="user_story">
 				<h3>Scenario: Reservation Credit</h3>
 				<ul>
@@ -149,8 +160,11 @@
 					<li><strong>Expected Resolution:</strong> The guest receives clear instructions on how to apply their reservation credit to a new booking, including any restrictions or expiration details.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest should be able to view the amount of their reservation credit, its expiration date, and the process to apply it to a future booking.</li>
 				</ul>
-				<button onclick="loadContext('reservation_credit')">Load Context</button>
+				<div>
+					<button onclick="loadContext('reservation_credit')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="trying_to_book" class="user_story">
 				<h3>Scenario: Trying to book</h3>
 				<ul>
@@ -161,8 +175,11 @@
 					<li><strong>Expected Resolution:</strong> The guest successfully completes their flight booking with the assistance provided.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest receives clear guidance on how to complete their flight booking, including any necessary steps or information required.</li>
 				</ul>
-				<button onclick="loadContext('trying_to_book')">Load Context</button>
+				<div>
+					<button onclick="loadContext('trying_to_book')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="get_a_refund" class="user_story">
 				<h3>Scenario: Get a refund</h3>
 				<ul>
@@ -173,8 +190,11 @@
 					<li><strong>Expected Resolution:</strong> The guest receives a full refund to their original payment method within the specified timeframe.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest receives confirmation of the refund request and a timeline for when to expect the refund.</li>
 				</ul>
-				<button onclick="loadContext('get_a_refund')">Load Context</button>
+				<div>
+					<button onclick="loadContext('get_a_refund')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="my_flight_was_canceled" class="user_story">
 				<h3>Scenario: My flight was canceled</h3>
 				<ul>
@@ -185,8 +205,11 @@
 					<li><strong>Expected Resolution:</strong> The guest is informed about how to rebook their flight, request a refund, or receive compensation, along with any necessary contact information.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest receives clear information about their options for rebooking, refunds, and any compensation they may be entitled to.</li>
 				</ul>
-				<button onclick="loadContext('my_flight_was_canceled')">Load Context</button>
+				<div>
+					<button onclick="loadContext('my_flight_was_canceled')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="error_message" class="user_story">
 				<h3>Scenario: Error message</h3>
 				<ul>
@@ -197,8 +220,11 @@
 					<li><strong>Expected Resolution:</strong> The guest is guided through troubleshooting steps or provided with a workaround to complete their intended action.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest receives a clear explanation of the error message and steps to resolve it, or an alternative solution if the issue cannot be resolved immediately.</li>
 				</ul>
-				<button onclick="loadContext('error_message')">Load Context</button>
+				<div>
+					<button onclick="loadContext('error_message')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="check_bag" class="user_story">
 				<h3>Scenario: Check Baggage Policies</h3>
 				<ul>
@@ -209,8 +235,11 @@
 					<li><strong>Expected Resolution:</strong> The guest understands the baggage policies and fees, and is informed about how to check their bag at the airport.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest receives clear information about baggage policies, including fees for checked bags, size and weight restrictions, and the process for checking bags at the airport.</li>
 				</ul>
-				<button onclick="loadContext('check_bag')">Load Context</button>
+				<div>
+					<button onclick="loadContext('check_bag')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="cancel_flight" class="user_story">
 				<h3>Scenario: Cancel Flight</h3>
 				<ul>
@@ -221,8 +250,11 @@
 					<li><strong>Expected Resolution:</strong> The guest receives a confirmation of the cancellation and details regarding their refund or credit options.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest successfully cancels their flight and receives confirmation of the cancellation along with information on the refund or credit process.</li>
 				</ul>
-				<button onclick="loadContext('cancel_flight')">Load Context</button>
+				<div>
+					<button onclick="loadContext('cancel_flight')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="check_in" class="user_story">
 				<h3>Scenario: Check In</h3>
 				<ul>
@@ -233,8 +265,11 @@
 					<li><strong>Expected Resolution:</strong> Guest receives confirmation of check-in and a digital boarding pass.</li>
 					<li><strong>Acceptance Criteria:</strong> Guest successfully checks in and receives a boarding pass.</li>
 				</ul>
-				<button onclick="loadContext('check_in')">Load Context</button>
+				<div>
+					<button onclick="loadContext('check_in')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="use_credit" class="user_story">
 				<h3>Scenario: Use flight credit for new booking</h3>
 				<ul>
@@ -245,8 +280,11 @@
 					<li><strong>Expected Resolution:</strong> The guest's flight credit is applied to the new booking, and they receive a confirmation email with the updated itinerary.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest successfully applies their flight credit to a new booking and receives confirmation of the transaction.</li>
 				</ul>
-				<button onclick="loadContext('use_credit')">Load Context</button>
+				<div>
+					<button onclick="loadContext('use_credit')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="flight_status" class="user_story">
 				<h3>Scenario: Check Flight Status</h3>
 				<ul>
@@ -257,8 +295,11 @@
 					<li><strong>Expected Resolution:</strong> The guest is provided with the current status of their flight, including any delays or changes.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest receives accurate and real-time information about their flight status, including departure and arrival times, delays, and gate information.</li>
 				</ul>
-				<button onclick="loadContext('flight_status')">Load Context</button>
+				<div>
+					<button onclick="loadContext('flight_status')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="special_assistance" class="user_story">
 				<h3>Scenario: Special Assistance Request</h3>
 				<ul>
@@ -269,8 +310,11 @@
 					<li><strong>Expected Resolution:</strong> The guest's request for special assistance is processed, and they receive a confirmation email with details of the assistance provided.</li>
 					<li><strong>Acceptance Criteria:</strong> Guest successfully adds special assistance to their reservation and receives confirmation of the request.</li>
 				</ul>
-				<button onclick="loadContext('special_assistance')">Load Context</button>
+				<div>
+					<button onclick="loadContext('special_assistance')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="modify_existing_reservation" class="user_story">
 				<h3>Scenario: Modify Existing Reservation</h3>
 				<ul>
@@ -281,8 +325,11 @@
 					<li><strong>Expected Resolution:</strong> The guest's reservation is modified according to their request, and they receive updated itinerary information.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest can successfully change their flight date, time, or other details without incurring excessive fees, and receives a confirmation of the changes made.</li>
 				</ul>
-				<button onclick="loadContext('modify_existing_reservation')">Load Context</button>
+				<div>
+					<button onclick="loadContext('modify_existing_reservation')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="add_bag" class="user_story">
 				<h3>Scenario: Add Bag</h3>
 				<ul>
@@ -293,8 +340,11 @@
 					<li><strong>Expected Resolution:</strong> The guest receives a confirmation email with the updated baggage details and any additional charges if applicable.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest can successfully add a bag to their existing reservation and receive confirmation of the updated baggage allowance.</li>
 				</ul>
-				<button onclick="loadContext('add_bag')">Load Context</button>
+				<div>
+					<button onclick="loadContext('add_bag')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="add_seat" class="user_story">
 				<h3>Scenario: Add Seat Assignment</h3>
 				<ul>
@@ -305,8 +355,11 @@
 					<li><strong>Expected Resolution:</strong> The guest successfully adds a seat assignment to their reservation and receives a confirmation of the updated seat selection.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest can view available seat options and select a preferred seat. The system should confirm the seat assignment and update the reservation accordingly.</li>
 				</ul>
-				<button onclick="loadContext('add_seat')">Load Context</button>
+				<div>
+					<button onclick="loadContext('add_seat')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="irop" class="user_story">
 				<h3>Scenario: Irregular Operations (IROP)</h3>
 				<ul>
@@ -317,8 +370,11 @@
 					<li><strong>Expected Resolution:</strong> The guest is informed about their rebooking options, eligibility for refunds, and any travel credits available.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest receives clear information about their options, including rebooking, refunds, and travel credits.</li>
 				</ul>
-				<button onclick="loadContext('irop')">Load Context</button>
+				<div>
+					<button onclick="loadContext('irop')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="special_assistance" class="user_story">
 				<h3>Scenario: Requesting Special Assistance</h3>
 				<ul>
@@ -329,8 +385,11 @@
 					<li><strong>Expected Resolution:</strong> The guest is provided with the necessary assistance and accommodations for their flight.</li>
 					<li><strong>Acceptance Criteria:</strong> Guest successfully requests special assistance and receives confirmation of accommodations.</li>
 				</ul>
-				<button onclick="loadContext('special_assistance')">Load Context</button>
+				<div>
+					<button onclick="loadContext('special_assistance')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="optional_services" class="user_story">
 				<h3>Scenario: Optional Services</h3>
 				<ul>
@@ -341,8 +400,11 @@
 					<li><strong>Expected Resolution:</strong> The guest receives a confirmation of the added services and an updated total cost for their reservation.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest can successfully add optional services such as bags, seats, or pet-in-cabin to their existing reservation without any errors.</li>
 				</ul>
-				<button onclick="loadContext('optional_services')">Load Context</button>
+				<div>
+					<button onclick="loadContext('optional_services')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="add_pet" class="user_story">
 				<h3>Scenario: Add Pet to Reservation</h3>
 				<ul>
@@ -353,8 +415,11 @@
 					<li><strong>Expected Resolution:</strong> The pet is added to the reservation, and the guest receives an updated confirmation email.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest successfully adds a pet-in-cabin to their existing reservation and receives confirmation of the addition.</li>
 				</ul>
-				<button onclick="loadContext('add_pet')">Load Context</button>
+				<div>
+					<button onclick="loadContext('add_pet')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="add_car_seat_or_stroller" class="user_story">
 				<h3>Scenario: Add Car Seat or Stroller</h3>
 				<ul>
@@ -365,8 +430,11 @@
 					<li><strong>Expected Resolution:</strong> The car seat and/or stroller is added to the reservation, and the guest receives a confirmation of the update.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest can successfully add a car seat and/or stroller to their existing reservation without any issues.</li>
 				</ul>
-				<button onclick="loadContext('add_car_seat_or_stroller')">Load Context</button>
+				<div>
+					<button onclick="loadContext('add_car_seat_or_stroller')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="portable_oxygen_concentrator" class="user_story">
 				<h3>Scenario: Adding a Portable Oxygen Concentrator to Reservation</h3>
 				<ul>
@@ -377,8 +445,11 @@
 					<li><strong>Expected Resolution:</strong> The guest receives a confirmation email or notification indicating that the POC has been added to their reservation.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest can successfully add a portable oxygen concentrator (POC) to their existing reservation and receive confirmation of the addition.</li>
 				</ul>
-				<button onclick="loadContext('portable_oxygen_concentrator')">Load Context</button>
+				<div>
+					<button onclick="loadContext('portable_oxygen_concentrator')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="add_wheelchair" class="user_story">
 				<h3>Scenario: Add Wheelchair Service</h3>
 				<ul>
@@ -389,8 +460,11 @@
 					<li><strong>Expected Resolution:</strong> The guest receives confirmation of the added wheelchair service or registration of their personal wheelchair.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest can successfully add wheelchair service to their reservation or register their personal wheelchair before their flight.</li>
 				</ul>
-				<button onclick="loadContext('add_wheelchair')">Load Context</button>
+				<div>
+					<button onclick="loadContext('add_wheelchair')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="add_shortcut_security" class="user_story">
 				<h3>Scenario: Add Shortcut Security to Reservation</h3>
 				<ul>
@@ -401,8 +475,11 @@
 					<li><strong>Expected Resolution:</strong> The guest's reservation is updated to include Shortcut Security, and they receive an updated confirmation email.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest successfully adds Shortcut Security to their existing reservation and receives confirmation of the addition.</li>
 				</ul>
-				<button onclick="loadContext('add_shortcut_security')">Load Context</button>
+				<div>
+					<button onclick="loadContext('add_shortcut_security')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="memberships" class="user_story">
 				<h3>Scenario: Membership Inquiries</h3>
 				<ul>
@@ -413,8 +490,11 @@
 					<li><strong>Expected Resolution:</strong> The guest understands the differences between the two membership programs and is able to make an informed decision about joining.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest receives clear information about the benefits, costs, and application process for Free Spirit and Spirit Saver$ Club® memberships.</li>
 				</ul>
-				<button onclick="loadContext('memberships')">Load Context</button>
+				<div>
+					<button onclick="loadContext('memberships')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="resend_confirmation_email" class="user_story">
 				<h3>Scenario: Resend Confirmation Email</h3>
 				<ul>
@@ -425,8 +505,11 @@
 					<li><strong>Expected Resolution:</strong> The guest successfully receives a resent confirmation email.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest receives a new confirmation email with all booking details within a few minutes of the request.</li>
 				</ul>
-				<button onclick="loadContext('resend_confirmation_email')">Load Context</button>
+				<div>
+					<button onclick="loadContext('resend_confirmation_email')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="travel_advisory" class="user_story">
 				<h3>Scenario: Travel Advisory</h3>
 				<ul>
@@ -437,8 +520,11 @@
 					<li><strong>Expected Resolution:</strong> Provide the guest with the latest travel advisories, including any necessary documentation, health requirements, and safety protocols.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest receives up-to-date information on travel restrictions, requirements, and advisories for their destination.</li>
 				</ul>
-				<button onclick="loadContext('travel_advisory')">Load Context</button>
+				<div>
+					<button onclick="loadContext('travel_advisory')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="travelling_with_a_minor" class="user_story">
 				<h3>Scenario: Travelling with a Minor</h3>
 				<ul>
@@ -449,8 +535,11 @@
 					<li><strong>Expected Resolution:</strong> The guest is provided with detailed guidelines on traveling with a minor, including age restrictions, necessary documentation, and any applicable fees.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest receives clear information on age requirements, documentation needed, and any additional fees for traveling with a minor.</li>
 				</ul>
-				<button onclick="loadContext('travelling_with_a_minor')">Load Context</button>
+				<div>
+					<button onclick="loadContext('travelling_with_a_minor')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="military" class="user_story">
 				<h3>Scenario: Military Discounts and Services</h3>
 				<ul>
@@ -461,8 +550,11 @@
 					<li><strong>Expected Resolution:</strong> The guest is informed about the available discounts, such as military fare discounts, priority boarding, and any special baggage policies for military personnel.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest receives detailed information about special services and discounts available for active duty military members, including how to access these benefits during booking.</li>
 				</ul>
-				<button onclick="loadContext('military')">Load Context</button>
+				<div>
+					<button onclick="loadContext('military')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="name_change" class="user_story">
 				<h3>Scenario: Name Change Request</h3>
 				<ul>
@@ -473,8 +565,11 @@
 					<li><strong>Expected Resolution:</strong> The name on the reservation is updated to match the guest's identification, and a confirmation is sent to the guest.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest must provide the correct name as it appears on their identification, and the request must be made at least 24 hours before the flight departure.</li>
 				</ul>
-				<button onclick="loadContext('name_change')">Load Context</button>
+				<div>
+					<button onclick="loadContext('name_change')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="new_travel_options" class="user_story">
 				<h3>Scenario: New Travel Options</h3>
 				<ul>
@@ -485,8 +580,11 @@
 					<li><strong>Expected Resolution:</strong> The guest is informed about the latest travel options and services, allowing them to make informed decisions for their travel plans.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest receives detailed information about Spirit's latest travel options and services, including any new routes, fare changes, and amenities.</li>
 				</ul>
-				<button onclick="loadContext('new_travel_options')">Load Context</button>
+				<div>
+					<button onclick="loadContext('new_travel_options')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="service_animal" class="user_story">
 				<h3>Scenario: Service Animal Registration</h3>
 				<ul>
@@ -497,8 +595,11 @@
 					<li><strong>Expected Resolution:</strong> The service animal is successfully registered, and the guest receives confirmation via email.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest must provide documentation for the service animal and complete the registration process at least 48 hours before the flight.</li>
 				</ul>
-				<button onclick="loadContext('service_animal')">Load Context</button>
+				<div>
+					<button onclick="loadContext('service_animal')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="complaint_feedback" class="user_story">
 				<h3>Scenario: Complaint/Feedback</h3>
 				<ul>
@@ -509,8 +610,11 @@
 					<li><strong>Expected Resolution:</strong> The guest receives a formal acknowledgment of their complaint and information on how it will be addressed.</li>
 					<li><strong>Acceptance Criteria:</strong> The guest's complaint or feedback is acknowledged, and a response is provided within 48 hours.</li>
 				</ul>
-				<button onclick="loadContext('complaint_feedback')">Load Context</button>
+				<div>
+					<button onclick="loadContext('complaint_feedback')">Load Context</button>
+				</div>
 			</div>
+			<hr>
 			<div id="spirit_meet_and_assistance" class="user_story">
 				<h3>Scenario: Requesting Spirit Meet and Assistance Service</h3>
 				<ul>
@@ -521,7 +625,9 @@
 					<li><strong>Expected Resolution:</strong> The guest is provided with a dedicated assistant to help them through the airport and during boarding, ensuring a comfortable travel experience.</li>
 					<li><strong>Acceptance Criteria:</strong> Guest successfully requests Spirit Meet and Assistance service and receives confirmation of the service prior to their travel date.</li>
 				</ul>
-				<button onclick="loadContext('spirit_meet_and_assistance')">Load Context</button>
+				<div>
+					<button onclick="loadContext('spirit_meet_and_assistance')">Load Context</button>
+				</div>
 			</div>
 
 		</div>
