@@ -69,12 +69,19 @@
 			top: 8px;
 		}
 
+
 		main {
 			flex: 1;
-			/* Flex grow to take available space */
-			padding: 20px;
+			padding: 80px 40px;
 			text-align: left;
 			box-sizing: border-box;
+
+			overflow: auto;
+		}
+
+		#main-div {
+			max-width: 1000px;
+			margin: auto;
 		}
 
 		footer {
@@ -109,15 +116,429 @@
 		<div class="hamburger"></div>
 	</header>
 	<main>
-		<h1>AI Agent Testing Page for Spirit Airlines</h1>
-		<p>Welcome to the testing page for the Spirit Airlines AI Agent. Please follow the guidelines below to ensure effective testing:</p>
-		<ul>
-			<li>Verify that the AI responds accurately to customer inquiries.</li>
-			<li>Test the AI's ability to handle unexpected user input.</li>
-			<li>Assess response time for typical customer questions.</li>
-			<li>Check the AI's capability to escalate complex issues to human agents.</li>
-		</ul>
+		<div id="main-div">
+			<h1>AI Agent Testing Page for Spirit Airlines</h1>
+			<p>Welcome to the testing page for the Spirit Airlines AI Agent. Please follow the guidelines below to ensure effective testing:</p>
+			<ul>
+				<li>Verify that the AI responds accurately to customer inquiries.</li>
+				<li>Test the AI's ability to handle unexpected user input.</li>
+				<li>Assess response time for typical customer questions.</li>
+				<li>Check the AI's capability to escalate complex issues to human agents.</li>
+			</ul>
+
+			<h2>Testing Scenarios for Spirit Airlines AI Agent</h2>
+			<div id="voucher" class="user_story">
+				<h3>Scenario: Inquiry about Voucher Usage</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to inquire about my voucher so that I can understand how to use it.</li>
+					<li><strong>Context:</strong> Guest has received a voucher and needs information on its usage.</li>
+					<li><strong>Initial User Input:</strong> I have a voucher and I need to know how to use it.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest has trouble redeeming the voucher or if the voucher is expired or invalid.</li>
+					<li><strong>Expected Resolution:</strong> The guest is provided with detailed information on how to redeem the voucher, including applicable flights, booking process, and any terms and conditions.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest receives clear instructions on how to use the voucher, including any restrictions or expiration dates.</li>
+				</ul>
+				<button onclick="loadContext('voucher')">Load Context</button>
+			</div>
+			<div id="reservation_credit" class="user_story">
+				<h3>Scenario: Reservation Credit</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to understand my reservation credit so that I can apply it to a future booking.</li>
+					<li><strong>Context:</strong> Guest has a reservation credit from a previous cancellation or change.</li>
+					<li><strong>Initial User Input:</strong> I have a reservation credit from a previous cancellation. How can I use it for my next flight?</li>
+					<li><strong>Potential Escalation Scenarios:</strong> The guest is unable to find their reservation credit, the credit has expired, or the guest wants to transfer the credit to another person.</li>
+					<li><strong>Expected Resolution:</strong> The guest receives clear instructions on how to apply their reservation credit to a new booking, including any restrictions or expiration details.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest should be able to view the amount of their reservation credit, its expiration date, and the process to apply it to a future booking.</li>
+				</ul>
+				<button onclick="loadContext('reservation_credit')">Load Context</button>
+			</div>
+			<div id="trying_to_book" class="user_story">
+				<h3>Scenario: Trying to book</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want assistance with booking a flight so that I can complete my reservation.</li>
+					<li><strong>Context:</strong> Guest is attempting to book a flight but encountering difficulties.</li>
+					<li><strong>Initial User Input:</strong> The guest has provided their travel dates, destination, and number of passengers but is unsure how to proceed with the booking.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest continues to experience issues, they may request to speak with a supervisor or customer service representative.</li>
+					<li><strong>Expected Resolution:</strong> The guest successfully completes their flight booking with the assistance provided.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest receives clear guidance on how to complete their flight booking, including any necessary steps or information required.</li>
+				</ul>
+				<button onclick="loadContext('trying_to_book')">Load Context</button>
+			</div>
+			<div id="get_a_refund" class="user_story">
+				<h3>Scenario: Get a refund</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to request a refund so that I can get my money back for a cancelled or changed flight.</li>
+					<li><strong>Context:</strong> Guest is seeking a refund for a flight that was cancelled or significantly changed.</li>
+					<li><strong>Initial User Input:</strong> The guest provides their booking reference number and details of the cancelled or changed flight.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the refund is not processed within the expected timeframe, the guest may escalate the issue to customer service management.</li>
+					<li><strong>Expected Resolution:</strong> The guest receives a full refund to their original payment method within the specified timeframe.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest receives confirmation of the refund request and a timeline for when to expect the refund.</li>
+				</ul>
+				<button onclick="loadContext('get_a_refund')">Load Context</button>
+			</div>
+			<div id="my_flight_was_canceled" class="user_story">
+				<h3>Scenario: My flight was canceled</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want information about my cancelled flight so that I can understand my options.</li>
+					<li><strong>Context:</strong> Guest's flight has been cancelled and they need to know next steps.</li>
+					<li><strong>Initial User Input:</strong> My flight was canceled. What should I do next?</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest is unhappy with the options provided, they may request to speak to a supervisor or customer service representative.</li>
+					<li><strong>Expected Resolution:</strong> The guest is informed about how to rebook their flight, request a refund, or receive compensation, along with any necessary contact information.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest receives clear information about their options for rebooking, refunds, and any compensation they may be entitled to.</li>
+				</ul>
+				<button onclick="loadContext('my_flight_was_canceled')">Load Context</button>
+			</div>
+			<div id="error_message" class="user_story">
+				<h3>Scenario: Error message</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to resolve an error message I received while using Spirit's website or app.</li>
+					<li><strong>Context:</strong> Guest encountered an error while using Spirit's online services.</li>
+					<li><strong>Initial User Input:</strong> The guest reports the specific error message encountered while using the website or app.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the error persists, the guest may need to be escalated to technical support for further assistance.</li>
+					<li><strong>Expected Resolution:</strong> The guest is guided through troubleshooting steps or provided with a workaround to complete their intended action.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest receives a clear explanation of the error message and steps to resolve it, or an alternative solution if the issue cannot be resolved immediately.</li>
+				</ul>
+				<button onclick="loadContext('error_message')">Load Context</button>
+			</div>
+			<div id="check_bag" class="user_story">
+				<h3>Scenario: Check Baggage Policies</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to check my bag so that I can understand the process and fees.</li>
+					<li><strong>Context:</strong> Guest needs information about baggage policies and fees.</li>
+					<li><strong>Initial User Input:</strong> What are the baggage policies and fees for checking a bag?</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest has further questions about specific fees or exceptions, or if they encounter issues during the check-in process.</li>
+					<li><strong>Expected Resolution:</strong> The guest understands the baggage policies and fees, and is informed about how to check their bag at the airport.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest receives clear information about baggage policies, including fees for checked bags, size and weight restrictions, and the process for checking bags at the airport.</li>
+				</ul>
+				<button onclick="loadContext('check_bag')">Load Context</button>
+			</div>
+			<div id="cancel_flight" class="user_story">
+				<h3>Scenario: Cancel Flight</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to cancel my flight so that I can receive a refund or credit.</li>
+					<li><strong>Context:</strong> Guest needs to cancel their reservation.</li>
+					<li><strong>Initial User Input:</strong> I would like to cancel my flight reservation.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest encounters issues with the cancellation process or has questions about their refund or credit, they may need to speak with a customer service representative.</li>
+					<li><strong>Expected Resolution:</strong> The guest receives a confirmation of the cancellation and details regarding their refund or credit options.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest successfully cancels their flight and receives confirmation of the cancellation along with information on the refund or credit process.</li>
+				</ul>
+				<button onclick="loadContext('cancel_flight')">Load Context</button>
+			</div>
+			<div id="check_in" class="user_story">
+				<h3>Scenario: Check In</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to check in for my flight so that I'm ready for travel.</li>
+					<li><strong>Context:</strong> Guest needs to complete the check-in process.</li>
+					<li><strong>Initial User Input:</strong> Guest provides confirmation number and last name.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> Guest encounters issues with the confirmation number or flight details.</li>
+					<li><strong>Expected Resolution:</strong> Guest receives confirmation of check-in and a digital boarding pass.</li>
+					<li><strong>Acceptance Criteria:</strong> Guest successfully checks in and receives a boarding pass.</li>
+				</ul>
+				<button onclick="loadContext('check_in')">Load Context</button>
+			</div>
+			<div id="use_credit" class="user_story">
+				<h3>Scenario: Use flight credit for new booking</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to use my flight credit so that I can book a new flight.</li>
+					<li><strong>Context:</strong> Guest has a flight credit and wants to apply it to a new booking.</li>
+					<li><strong>Initial User Input:</strong> I have a flight credit that I would like to use for my next booking.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> The flight credit is not recognized, the guest encounters an error during the booking process, or the guest has questions about the terms of the flight credit.</li>
+					<li><strong>Expected Resolution:</strong> The guest's flight credit is applied to the new booking, and they receive a confirmation email with the updated itinerary.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest successfully applies their flight credit to a new booking and receives confirmation of the transaction.</li>
+				</ul>
+				<button onclick="loadContext('use_credit')">Load Context</button>
+			</div>
+			<div id="flight_status" class="user_story">
+				<h3>Scenario: Check Flight Status</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to check my flight status so that I can plan my travel accordingly.</li>
+					<li><strong>Context:</strong> Guest needs up-to-date information on their flight.</li>
+					<li><strong>Initial User Input:</strong> Flight number or departure city and destination city.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the flight status cannot be retrieved, the guest may need to speak with a customer service representative for further assistance.</li>
+					<li><strong>Expected Resolution:</strong> The guest is provided with the current status of their flight, including any delays or changes.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest receives accurate and real-time information about their flight status, including departure and arrival times, delays, and gate information.</li>
+				</ul>
+				<button onclick="loadContext('flight_status')">Load Context</button>
+			</div>
+			<div id="special_assistance" class="user_story">
+				<h3>Scenario: Special Assistance Request</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to add special assistance to my reservation so that my needs are accommodated during travel.</li>
+					<li><strong>Context:</strong> Guest requires special assistance (e.g., wheelchair, service animal).</li>
+					<li><strong>Initial User Input:</strong> Guest provides details about the type of special assistance required (e.g., wheelchair, service animal).</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest's request cannot be accommodated, they may need to speak with a supervisor for alternative solutions.</li>
+					<li><strong>Expected Resolution:</strong> The guest's request for special assistance is processed, and they receive a confirmation email with details of the assistance provided.</li>
+					<li><strong>Acceptance Criteria:</strong> Guest successfully adds special assistance to their reservation and receives confirmation of the request.</li>
+				</ul>
+				<button onclick="loadContext('special_assistance')">Load Context</button>
+			</div>
+			<div id="modify_existing_reservation" class="user_story">
+				<h3>Scenario: Modify Existing Reservation</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to modify my existing reservation so that it fits my updated travel plans.</li>
+					<li><strong>Context:</strong> Guest needs to change their flight date, time, or other details.</li>
+					<li><strong>Initial User Input:</strong> Guest provides their reservation number and the new desired flight details.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest encounters issues with the modification process, such as system errors or unexpected fees, they may request to speak with a customer service representative.</li>
+					<li><strong>Expected Resolution:</strong> The guest's reservation is modified according to their request, and they receive updated itinerary information.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest can successfully change their flight date, time, or other details without incurring excessive fees, and receives a confirmation of the changes made.</li>
+				</ul>
+				<button onclick="loadContext('modify_existing_reservation')">Load Context</button>
+			</div>
+			<div id="add_bag" class="user_story">
+				<h3>Scenario: Add Bag</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to add a bag to my reservation so that I can bring everything I need for my trip.</li>
+					<li><strong>Context:</strong> Guest wants to add baggage to an existing reservation.</li>
+					<li><strong>Initial User Input:</strong> Guest provides their reservation number and the number of bags they wish to add.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest encounters issues with their reservation number or payment, they may need to speak with customer service.</li>
+					<li><strong>Expected Resolution:</strong> The guest receives a confirmation email with the updated baggage details and any additional charges if applicable.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest can successfully add a bag to their existing reservation and receive confirmation of the updated baggage allowance.</li>
+				</ul>
+				<button onclick="loadContext('add_bag')">Load Context</button>
+			</div>
+			<div id="add_seat" class="user_story">
+				<h3>Scenario: Add Seat Assignment</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to add a seat assignment to my reservation so that I can choose where I sit.</li>
+					<li><strong>Context:</strong> Guest wants to select or change their seat assignment.</li>
+					<li><strong>Initial User Input:</strong> Guest provides their reservation details and selects a seat from the available options.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the selected seat is no longer available, the guest should be prompted to choose another seat. If there are issues with the reservation details, the guest may need to contact customer support.</li>
+					<li><strong>Expected Resolution:</strong> The guest successfully adds a seat assignment to their reservation and receives a confirmation of the updated seat selection.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest can view available seat options and select a preferred seat. The system should confirm the seat assignment and update the reservation accordingly.</li>
+				</ul>
+				<button onclick="loadContext('add_seat')">Load Context</button>
+			</div>
+			<div id="irop" class="user_story">
+				<h3>Scenario: Irregular Operations (IROP)</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest affected by irregular operations (IROP), I want to know my options so that I can adjust my travel plans.</li>
+					<li><strong>Context:</strong> Guest's flight has been affected by IROP and needs to understand available alternatives.</li>
+					<li><strong>Initial User Input:</strong> My flight has been canceled due to irregular operations. What are my options?</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest is dissatisfied with the options provided or if they encounter issues with rebooking.</li>
+					<li><strong>Expected Resolution:</strong> The guest is informed about their rebooking options, eligibility for refunds, and any travel credits available.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest receives clear information about their options, including rebooking, refunds, and travel credits.</li>
+				</ul>
+				<button onclick="loadContext('irop')">Load Context</button>
+			</div>
+			<div id="special_assistance" class="user_story">
+				<h3>Scenario: Requesting Special Assistance</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to request special assistance for my flight so that my needs are accommodated.</li>
+					<li><strong>Context:</strong> Guest requires special assistance due to disability or other needs.</li>
+					<li><strong>Initial User Input:</strong> I need special assistance for my upcoming flight due to my disability.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest's request for assistance is not acknowledged or if accommodations are not provided as needed.</li>
+					<li><strong>Expected Resolution:</strong> The guest is provided with the necessary assistance and accommodations for their flight.</li>
+					<li><strong>Acceptance Criteria:</strong> Guest successfully requests special assistance and receives confirmation of accommodations.</li>
+				</ul>
+				<button onclick="loadContext('special_assistance')">Load Context</button>
+			</div>
+			<div id="optional_services" class="user_story">
+				<h3>Scenario: Optional Services</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to add an optional service to my reservation so that I can customize my travel experience.</li>
+					<li><strong>Context:</strong> Guest wants to add services like bags, seats, or pet-in-cabin to their existing reservation.</li>
+					<li><strong>Initial User Input:</strong> The guest provides their reservation confirmation number and selects the optional services they wish to add.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> The guest encounters issues with their reservation number, the optional services are unavailable, or there are payment processing errors.</li>
+					<li><strong>Expected Resolution:</strong> The guest receives a confirmation of the added services and an updated total cost for their reservation.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest can successfully add optional services such as bags, seats, or pet-in-cabin to their existing reservation without any errors.</li>
+				</ul>
+				<button onclick="loadContext('optional_services')">Load Context</button>
+			</div>
+			<div id="add_pet" class="user_story">
+				<h3>Scenario: Add Pet to Reservation</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest traveling with a pet, I want to add a pet to my cabin reservation so that I can bring my pet with me.</li>
+					<li><strong>Context:</strong> Guest needs to add a pet-in-cabin to their existing reservation.</li>
+					<li><strong>Initial User Input:</strong> Guest provides reservation details and pet information.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the pet type is not allowed, if the reservation is already at capacity, or if there are issues with payment.</li>
+					<li><strong>Expected Resolution:</strong> The pet is added to the reservation, and the guest receives an updated confirmation email.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest successfully adds a pet-in-cabin to their existing reservation and receives confirmation of the addition.</li>
+				</ul>
+				<button onclick="loadContext('add_pet')">Load Context</button>
+			</div>
+			<div id="add_car_seat_or_stroller" class="user_story">
+				<h3>Scenario: Add Car Seat or Stroller</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest with a car seat or stroller, I want to add it to my reservation so that I can travel with my child equipment.</li>
+					<li><strong>Context:</strong> Guest needs to add a car seat and/or stroller to their existing reservation.</li>
+					<li><strong>Initial User Input:</strong> I would like to add a car seat and/or stroller to my reservation.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest encounters issues while adding the items, they may need to speak with customer service for assistance.</li>
+					<li><strong>Expected Resolution:</strong> The car seat and/or stroller is added to the reservation, and the guest receives a confirmation of the update.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest can successfully add a car seat and/or stroller to their existing reservation without any issues.</li>
+				</ul>
+				<button onclick="loadContext('add_car_seat_or_stroller')">Load Context</button>
+			</div>
+			<div id="portable_oxygen_concentrator" class="user_story">
+				<h3>Scenario: Adding a Portable Oxygen Concentrator to Reservation</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest requiring a portable oxygen concentrator (POC), I want to add it to my reservation so that I can travel safely.</li>
+					<li><strong>Context:</strong> Guest needs to add a POC to their existing reservation.</li>
+					<li><strong>Initial User Input:</strong> The guest provides their reservation details and requests to add a POC.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest encounters issues adding the POC, they may need to speak with customer service for assistance.</li>
+					<li><strong>Expected Resolution:</strong> The guest receives a confirmation email or notification indicating that the POC has been added to their reservation.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest can successfully add a portable oxygen concentrator (POC) to their existing reservation and receive confirmation of the addition.</li>
+				</ul>
+				<button onclick="loadContext('portable_oxygen_concentrator')">Load Context</button>
+			</div>
+			<div id="add_wheelchair" class="user_story">
+				<h3>Scenario: Add Wheelchair Service</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest with a disability, I want to add wheelchair service to my reservation so that I can navigate the airport comfortably.</li>
+					<li><strong>Context:</strong> Guest needs to add wheelchair service or register their personal wheelchair for an existing reservation.</li>
+					<li><strong>Initial User Input:</strong> Guest provides reservation details and requests wheelchair service.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the wheelchair service is not available, the guest may need to be informed of alternative options or assistance.</li>
+					<li><strong>Expected Resolution:</strong> The guest receives confirmation of the added wheelchair service or registration of their personal wheelchair.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest can successfully add wheelchair service to their reservation or register their personal wheelchair before their flight.</li>
+				</ul>
+				<button onclick="loadContext('add_wheelchair')">Load Context</button>
+			</div>
+			<div id="add_shortcut_security" class="user_story">
+				<h3>Scenario: Add Shortcut Security to Reservation</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to add Shortcut Security to my reservation so that I can expedite my airport experience.</li>
+					<li><strong>Context:</strong> Guest wants to add Shortcut Security option to their existing reservation.</li>
+					<li><strong>Initial User Input:</strong> Guest provides their reservation details and requests to add Shortcut Security.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest's reservation cannot be found or if there are issues processing the payment for Shortcut Security.</li>
+					<li><strong>Expected Resolution:</strong> The guest's reservation is updated to include Shortcut Security, and they receive an updated confirmation email.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest successfully adds Shortcut Security to their existing reservation and receives confirmation of the addition.</li>
+				</ul>
+				<button onclick="loadContext('add_shortcut_security')">Load Context</button>
+			</div>
+			<div id="memberships" class="user_story">
+				<h3>Scenario: Membership Inquiries</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to inquire about Spirit's membership programs so that I can understand the benefits and join.</li>
+					<li><strong>Context:</strong> Guest is interested in Free Spirit or Spirit Saver$ Club® memberships.</li>
+					<li><strong>Initial User Input:</strong> What are the benefits of Free Spirit and Spirit Saver$ Club® memberships?</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest has further questions about specific benefits or issues with the membership application process, they may need to be escalated to a customer service representative.</li>
+					<li><strong>Expected Resolution:</strong> The guest understands the differences between the two membership programs and is able to make an informed decision about joining.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest receives clear information about the benefits, costs, and application process for Free Spirit and Spirit Saver$ Club® memberships.</li>
+				</ul>
+				<button onclick="loadContext('memberships')">Load Context</button>
+			</div>
+			<div id="resend_confirmation_email" class="user_story">
+				<h3>Scenario: Resend Confirmation Email</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to have my confirmation email resent so that I have all my booking details.</li>
+					<li><strong>Context:</strong> Guest hasn't received or has lost their confirmation email.</li>
+					<li><strong>Initial User Input:</strong> The guest provides their booking reference number and email address.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest does not receive the email after resending, escalate to customer support for further assistance.</li>
+					<li><strong>Expected Resolution:</strong> The guest successfully receives a resent confirmation email.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest receives a new confirmation email with all booking details within a few minutes of the request.</li>
+				</ul>
+				<button onclick="loadContext('resend_confirmation_email')">Load Context</button>
+			</div>
+			<div id="travel_advisory" class="user_story">
+				<h3>Scenario: Travel Advisory</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to check current travel advisories so that I can prepare for my trip.</li>
+					<li><strong>Context:</strong> Guest needs information on travel restrictions, requirements, or advisories.</li>
+					<li><strong>Initial User Input:</strong> What are the current travel advisories for my destination?</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest requires more detailed information or has specific concerns about their travel plans, they may need to speak with a customer service representative.</li>
+					<li><strong>Expected Resolution:</strong> Provide the guest with the latest travel advisories, including any necessary documentation, health requirements, and safety protocols.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest receives up-to-date information on travel restrictions, requirements, and advisories for their destination.</li>
+				</ul>
+				<button onclick="loadContext('travel_advisory')">Load Context</button>
+			</div>
+			<div id="travelling_with_a_minor" class="user_story">
+				<h3>Scenario: Travelling with a Minor</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to understand the requirements for traveling with a minor so that I can ensure a smooth journey.</li>
+					<li><strong>Context:</strong> Guest is planning to travel with a child or unaccompanied minor.</li>
+					<li><strong>Initial User Input:</strong> What are the requirements for traveling with a child or unaccompanied minor?</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest is not satisfied with the information provided or has further questions about specific situations, they may request to speak with a supervisor.</li>
+					<li><strong>Expected Resolution:</strong> The guest is provided with detailed guidelines on traveling with a minor, including age restrictions, necessary documentation, and any applicable fees.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest receives clear information on age requirements, documentation needed, and any additional fees for traveling with a minor.</li>
+				</ul>
+				<button onclick="loadContext('travelling_with_a_minor')">Load Context</button>
+			</div>
+			<div id="military" class="user_story">
+				<h3>Scenario: Military Discounts and Services</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a military member, I want to know about special services or discounts available to me so that I can utilize my benefits.</li>
+					<li><strong>Context:</strong> Guest is an active duty military member seeking information on special services or discounts.</li>
+					<li><strong>Initial User Input:</strong> What special services or discounts do you offer for military members?</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest is not satisfied with the information provided, they may request to speak with a supervisor or customer service representative for further assistance.</li>
+					<li><strong>Expected Resolution:</strong> The guest is informed about the available discounts, such as military fare discounts, priority boarding, and any special baggage policies for military personnel.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest receives detailed information about special services and discounts available for active duty military members, including how to access these benefits during booking.</li>
+				</ul>
+				<button onclick="loadContext('military')">Load Context</button>
+			</div>
+			<div id="name_change" class="user_story">
+				<h3>Scenario: Name Change Request</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to request a name change on my reservation so that my booking matches my identification.</li>
+					<li><strong>Context:</strong> Guest needs to correct or update the name on their reservation.</li>
+					<li><strong>Initial User Input:</strong> I need to change the name on my reservation.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the name change request is made less than 24 hours before the flight, or if the guest cannot provide the necessary identification.</li>
+					<li><strong>Expected Resolution:</strong> The name on the reservation is updated to match the guest's identification, and a confirmation is sent to the guest.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest must provide the correct name as it appears on their identification, and the request must be made at least 24 hours before the flight departure.</li>
+				</ul>
+				<button onclick="loadContext('name_change')">Load Context</button>
+			</div>
+			<div id="new_travel_options" class="user_story">
+				<h3>Scenario: New Travel Options</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to learn about new travel options or services so that I can enhance my travel experience.</li>
+					<li><strong>Context:</strong> Guest is interested in learning about Spirit's latest offerings or changes to services.</li>
+					<li><strong>Initial User Input:</strong> What are Spirit's latest travel options and services?</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest requires more detailed information or has specific questions about their travel plans, they may need to be escalated to a customer service representative.</li>
+					<li><strong>Expected Resolution:</strong> The guest is informed about the latest travel options and services, allowing them to make informed decisions for their travel plans.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest receives detailed information about Spirit's latest travel options and services, including any new routes, fare changes, and amenities.</li>
+				</ul>
+				<button onclick="loadContext('new_travel_options')">Load Context</button>
+			</div>
+			<div id="service_animal" class="user_story">
+				<h3>Scenario: Service Animal Registration</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest traveling with a service animal, I want to add my animal to my reservation so that I can travel with my necessary support.</li>
+					<li><strong>Context:</strong> Guest needs to register their service animal for their flight.</li>
+					<li><strong>Initial User Input:</strong> I would like to register my service animal for my upcoming flight.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest does not have the required documentation or if the service animal does not meet the airline's criteria, the guest may need to speak with a customer service representative.</li>
+					<li><strong>Expected Resolution:</strong> The service animal is successfully registered, and the guest receives confirmation via email.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest must provide documentation for the service animal and complete the registration process at least 48 hours before the flight.</li>
+				</ul>
+				<button onclick="loadContext('service_animal')">Load Context</button>
+			</div>
+			<div id="complaint_feedback" class="user_story">
+				<h3>Scenario: Complaint/Feedback</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest, I want to file a complaint or provide feedback so that my concerns are addressed.</li>
+					<li><strong>Context:</strong> Guest has had a negative experience or wants to provide general feedback.</li>
+					<li><strong>Initial User Input:</strong> I had a terrible experience with my recent flight and would like to share my feedback.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest is not satisfied with the initial response, they may request to speak with a supervisor or escalate the issue to a higher authority.</li>
+					<li><strong>Expected Resolution:</strong> The guest receives a formal acknowledgment of their complaint and information on how it will be addressed.</li>
+					<li><strong>Acceptance Criteria:</strong> The guest's complaint or feedback is acknowledged, and a response is provided within 48 hours.</li>
+				</ul>
+				<button onclick="loadContext('complaint_feedback')">Load Context</button>
+			</div>
+			<div id="spirit_meet_and_assistance" class="user_story">
+				<h3>Scenario: Requesting Spirit Meet and Assistance Service</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a guest with special needs, I want to request Spirit Meet and Assistance service so that I can navigate the airport comfortably.</li>
+					<li><strong>Context:</strong> Guest requires additional assistance navigating the airport or during the flight.</li>
+					<li><strong>Initial User Input:</strong> I need assistance at the airport and during my flight due to my special needs.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the guest does not receive confirmation of the assistance service, or if the assistance is not provided as requested, the guest may escalate the issue to customer service.</li>
+					<li><strong>Expected Resolution:</strong> The guest is provided with a dedicated assistant to help them through the airport and during boarding, ensuring a comfortable travel experience.</li>
+					<li><strong>Acceptance Criteria:</strong> Guest successfully requests Spirit Meet and Assistance service and receives confirmation of the service prior to their travel date.</li>
+				</ul>
+				<button onclick="loadContext('spirit_meet_and_assistance')">Load Context</button>
+			</div>
+
+		</div>
 	</main>
+	<script>
+		function loadContext(hash) {
+			if (history.pushState) {
+				// Ensure it's supported
+				var newUrl = window.location.href.split('#')[0] + '#' + hash;
+				window.history.pushState({ path: newUrl }, '', newUrl);
+			} else {
+				// Fallback if history.pushState is not supported
+				window.location.hash = hash;
+			}
+		}
+	</script>
+
 	<footer>
 		<p>&copy; AI Agent powered by <strong>Quiq</strong></p>
 	</footer>
