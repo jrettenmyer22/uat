@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<script src="https://spiritairlines-stage.quiq-api.com/app/chat-ui/index.js" charset="UTF-8"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protected Web Page</title>
-	<script src="https://spiritairlines-stage.quiq-api.com/app/chat-ui/index.js" charset="UTF-8"></script>
-
-	<style>
+    <title>Spirit Airlines AI Agent Test Page</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
         body { font-family: Arial, sans-serif; display: none; /* Hide content initially */ }
-        header { 
-            background-color: #f8f9fa; 
-            padding: 10px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
+        header {
+            background-color: #FFEC00;
+            padding: 11px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .logo {
-            width: 120px; /* Adjust size as necessary */
+            width: 145px; /* Adjust size as necessary */
             height: auto;
         }
         .hamburger {
             display: block;
-            width: 30px; /* size of the hamburger icon */
+            width: 22px; /* size of the hamburger icon */
             height: 3px; /* thickness of the hamburger bars */
             background-color: #333; /* color of the hamburger icon */
             position: relative; /* needed to position the pseudo-elements */
@@ -36,47 +42,63 @@
             transition: transform 0.3s ease;
         }
         .hamburger::before {
-            top: -10px;
+            top: -8px;
         }
         .hamburger::after {
-            top: 10px;
+            top: 8px;
         }
-        main { 
-            padding: 20px; 
-            text-align: left; 
+		#wrapper {
+			flex: 1;
+			display: flex;
+    		flex-direction: column;
+		}
+        main {
+            flex: 1; /* Flex grow to take available space */
+            padding: 20px;
+            text-align: left;
         }
-        footer { 
-            background-color: #f8f9fa; 
-            padding: 10px; 
-            text-align: center; 
+        footer {
+            background-color: #191919;
+            padding: 20px;
+            text-align: center;
+			color: #fff;
         }
+		li {
+			line-height: 2;
+		}
     </style>
 </head>
 <body>
     <script>
-        var correctPassword = 'password123'; // Set your password here
+        var correctPassword = 'quiq-spirit'; // Set your password here
         var userPassword = prompt('Please enter the password to view this site:');
         if (userPassword !== correctPassword) {
             document.body.innerHTML = '<h1>Access Denied</h1>'; // Message shown if password is wrong
         } else {
+            document.body.style.display = 'flex'; // Show content and use flex if password is correct
 			var chat = Quiq({
-				pageConfigurationId: 'guest-care-llm-assistant'
-			});
-            document.body.style.display = 'block'; // Show content if password is correct
+    			pageConfigurationId: 'guest-care-llm-assistant'
+  			});
         }
     </script>
-    <header>
-        <img src="path-to-your-logo.png" alt="Company Logo" class="logo">
-        <div class="hamburger"></div>
-    </header>
-    <main>
-        <p>This is a protected HTML page that requires a password to view.</p>
-    </main>
-    <footer>
-        <p>&copy; 2024 Website Name</p>
-    </footer>
-	<script>
-	</script>
+    <div id="wrapper">
+		<header>
+			<img src="https://proservices-static-prod.quiq-cdn.com/shared/spiritairlines/Spirit-Banner-Transparent-Logo-2.png" alt="Spirit Airlines Logo" class="logo">
+			<div class="hamburger"></div>
+		</header>
+		<main>
+			<h1>AI Agent Testing Page for Spirit Airlines</h1>
+			<p>Welcome to the testing page for the Spirit Airlines AI Agent. Please follow the guidelines below to ensure effective testing:</p>
+			<ul>
+				<li>Verify that the AI responds accurately to customer inquiries.</li>
+				<li>Test the AI's ability to handle unexpected user input.</li>
+				<li>Assess response time for typical customer questions.</li>
+				<li>Check the AI's capability to escalate complex issues to human agents.</li>
+			</ul>
+		</main>
+		<footer>
+			<p>&copy; AI Agent powered by <strong>Quiq</strong></p>
+		</footer>
+	</div>	
 </body>
 </html>
-
