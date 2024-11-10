@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script src="https://spiritairlines-stage.quiq-api.com/app/chat-ui/index.js" charset="UTF-8"></script>
+    <style>
+      body {
+        background-color: #333; 
+      }
+      #inline-widget {
+        height: 768px;
+        width: 544px;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 32px auto;
+        position: relative;
+        background-color: #fff;
+      }
+    </style>  
+  </head>
+  <body>
+    <div id="inline-widget"></div>  
+    <script>
+      var chat = Quiq({
+        pageConfigurationId: 'guest-care-llm-assistant'
+      });
+    </script>
+  </body>
+</html>
