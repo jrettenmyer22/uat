@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script src="https://llmatoz.quiq-api.com/app/chat-ui/index.js" charset="UTF-8"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bob's Discount Furniture AI Agent Test Page</title>
+	<style>
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			color: #191714;
+		}
+
+		body {
+			font-family: Arial, sans-serif;
+			display: none;
+			/* Hide content initially */
+		}
+
+		header {
+			background-color: #fff;
+			padding: 0px 20px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 60px;
+			box-sizing: border-box;
+			border-bottom:  solid #F8E6CD;
+		}
+
+		.logo {
+			width: 222px;
+			height: auto;
+		}
+
+		.hamburger {
+			display: block;
+			width: 22px;
+			/* size of the hamburger icon */
+			height: 3px;
+			/* thickness of the hamburger bars */
+			background-color: #333;
+			/* color of the hamburger icon */
+			position: relative;
+			/* needed to position the pseudo-elements */
+			transition: background 0.3s ease;
+		}
+
+		.hamburger::before,
+		.hamburger::after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 3px;
+			background-color: #333;
+			transition: transform 0.3s ease;
+		}
+
+		.hamburger::before {
+			top: -8px;
+		}
+
+		.hamburger::after {
+			top: 8px;
+		}
+
+
+		main {
+			flex: 1;
+			padding: 30px 40px;
+			text-align: left;
+			box-sizing: border-box;
+
+			overflow: auto;
+		}
+
+		#main-div {
+			max-width: 1000px;
+			margin: auto;
+		}
+
+		footer {
+			background-color: #ECBD75;
+			padding: 8px 20px;
+			text-align: left;
+			color: #fff;
+			box-sizing: border-box;
+		}
+
+		li {
+			line-height: 2;
+		}
+
+		.selected {
+			background: #F8E6CD;
+		}
+
+		.user_story {
+			padding: 8px 14px;
+			box-sizing: border-box;
+		}
+
+		.user_story div {
+			text-align: right;
+			padding: 10px;
+		}
+
+		button {
+			padding: 6px 12px;
+		}
+	</style>
+</head>
+
+<body>
+	<script>
+		var correctPassword = 'quiq'; // Set your password here
+		var userPassword = prompt('Please enter the password to view this site:');
+		if (userPassword !== correctPassword) {
+			document.body.innerHTML = '<h1>Access Denied</h1>';
+		} else {
+			document.body.style.display = 'flex';
+			var chat = Quiq({
+				pageConfigurationId: 'ai-agent-cs'
+			});
+		}
+	</script>
+	<header>
+		<img src="https://www.mybobs.com/assets/bobs-logo.svg" alt="Bob's Discount Furniture Logo" class="logo">
+		<div class="hamburger"></div>
+	</header>
+	<main>
+		<div id="main-div">
+			<h1>AI Agent Testing Page for Bob's Discount Furniture</h1>
+			<p>Welcome to the testing page for the Bob's Discount Furniture AI Agent. Please follow the guidelines below to ensure effective testing:</p>
+			<ul>
+				<li>Verify that the AI responds accurately to customer inquiries.</li>
+				<li>Test the AI's ability to handle unexpected user input.</li>
+				<li>Assess response time for typical customer questions.</li>
+				<li>Check the AI's capability to escalate complex issues to human agents.</li>
+			</ul>
+			<p>
+			<h2>Testing Scenarios for Bob's AI Agent</h2>
+			</p>
+			<hr>
+			<div id="order_details" class="user_story">
+				<h3>Scenario: Inquiry about Order Details</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a customer, I want to check the details of my order so that I can track its status.</li>
+					<li><strong>Context:</strong> Customer has placed an order and wants to know the current status.</li>
+					<li><strong>Initial User Input:</strong> I want to check the status of my order #123456.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the order status is unclear or there are issues with the order, escalate to customer support.</li>
+					<li><strong>Expected Resolution:</strong> Provide the customer with the current status of their order, including delivery updates if applicable.</li>
+					<li><strong>Acceptance Criteria:</strong> The customer receives accurate and detailed order status information.</li>
+				</ul>
+				<div>
+					<button onclick="loadContext('order_details')">Load Context</button>
+				</div>
+			</div>
+			<hr>
+			<div id="schedule_delivery" class="user_story">
+				<h3>Scenario: Schedule a Delivery</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a customer, I want to schedule my furniture delivery so that I can plan my day.</li>
+					<li><strong>Context:</strong> Customer needs to select a delivery date and time window.</li>
+					<li><strong>Initial User Input:</strong> I would like to schedule my delivery for next week.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the preferred date or time is unavailable, escalate to a delivery specialist.</li>
+					<li><strong>Expected Resolution:</strong> Customer successfully schedules their delivery with confirmation of the date and time window.</li>
+					<li><strong>Acceptance Criteria:</strong> Customer receives confirmation of their scheduled delivery, including any special instructions.</li>
+				</ul>
+				<div>
+					<button onclick="loadContext('schedule_delivery')">Load Context</button>
+				</div>
+			</div>
+			<hr>
+			<div id="special_request" class="user_story">
+				<h3>Scenario: Special Delivery Instructions</h3>
+				<ul>
+					<li><strong>User Story:</strong> As a customer, I want to provide special instructions for my delivery so that it goes smoothly.</li>
+					<li><strong>Context:</strong> Customer needs to communicate specific requirements for their delivery.</li>
+					<li><strong>Initial User Input:</strong> Please ensure delivery is made through the back entrance.</li>
+					<li><strong>Potential Escalation Scenarios:</strong> If the special request cannot be accommodated, escalate to a delivery specialist.</li>
+					<li><strong>Expected Resolution:</strong> Special instructions are added to the delivery details, and the customer receives confirmation.</li>
+					<li><strong>Acceptance Criteria:</strong> Customer successfully provides special instructions, and they are acknowledged and confirmed.</li>
+				</ul>
+				<div>
+					<button onclick="loadContext('special_request')">Load Context</button>
+				</div>
+			</div>
+		</div>
+	</main>
+	<script>
+		function loadContext(hash) {
+			if (history.pushState) {
+				var newUrl = window.location.href.split('#')[0] + '#' + hash;
+				window.history.pushState({ path: newUrl }, '', newUrl);
+			} else {
+				window.location.hash = hash;
+			}
+			const stories = document.querySelectorAll('.user_story');
+			for (let e of stories) {
+				e.classList.remove('selected');
+			}
+			document.getElementById(hash).classList.add('selected');
+			chat.setChatRegistrationField('schema.conversation.custom.aiAgentFixture', hash);
+		}
+	</script>
+
+	<footer>
+		<p>&copy; AI Agent powered by <strong>Quiq</strong></p>
+	</footer>
+</body>
+
+</html>
