@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-        <script src="https://bobs-stage.quiq-api.com/app/chat-ui/index.js" charset="UTF-8"></script>
+<head>
+	<script src="https://bobs-stage.quiq-api.com/app/chat-ui/index.js" charset="UTF-8"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Bob's Discount Furniture AI Agent</title>
@@ -106,7 +106,8 @@
 			float: right;
 		}
 
-		p, hr {
+		p,
+		hr {
 			max-width: 1028px;
 		}
 	</style>
@@ -138,7 +139,7 @@
 	<header>
 		<img src="https://www.mybobs.com/assets/bobs-logo.svg" alt="Bob's Discount Furniture Logo" class="logo">
 	</header>
-	
+
 	<div class="navbar">
 		<a href="#overview" onclick="toggleSection('overview')" class="active">Overview</a>
 		<a href="#primary-groups" onclick="toggleSection('primary-groups')">Primary Groups</a>
@@ -205,8 +206,8 @@
 			</ul>
 			<p>Organizing inquiries by topic ensures the AI delivers precise and efficient solutions tailored to customer needs.</p>
 		</section>
-		
-		
+
+
 		<section id="guides">
 			<h1>Guides</h1>
 			<img src="https://i.ibb.co/DRRg5Hz/guides.png" alt="Guides Icon" class="section-img" />
@@ -221,7 +222,7 @@
 				<li><strong>General Support:</strong> Provides assistance with a variety of general inquiries and concerns, ensuring comprehensive support for all customer needs.</li>
 			</ul>
 		</section>
-	
+
 		<section id="tools">
 			<h1>Tools</h1>
 			<img src="https://i.ibb.co/rkgVdhp/tools.png" alt="Tools Icon" class="section-img" />
@@ -235,7 +236,7 @@
 				<li><strong>Report a Product Issue:</strong> Allow customers to report issues with their delivered products, including damages or missing items, and initiate support for resolution.</li>
 			</ul>
 		</section>
-		
+
 		<section id="measure">
 			<h1>Measure</h1>
 			<img src="https://i.ibb.co/XCfqNns/performance.png" alt="Measure Icon" class="section-img" />
@@ -248,7 +249,7 @@
 			</ul>
 			<p>These measurements help ensure the AI agent continuously improves and delivers exceptional customer service experiences.</p>
 		</section>
-		
+
 		<section id="improve">
 			<h1>Improve</h1>
 			<img src="https://i.ibb.co/sVX1PFd/testing.png" alt="Improve Icon" class="section-img" />
@@ -256,59 +257,519 @@
 
 
 			<div id="main-div">
-				<h1></h1>
-				<p>Welcome to the testing page for the Bob's Discount Furniture AI Agent. Please follow the guidelines below to ensure effective testing:</p>
+				<h2>Fixture 2201: <em>Rescheduled</em></h2>
+				<h3>Key Highlights</h3>
 				<ul>
-					<li>Verify that the AI responds accurately to customer inquiries.</li>
-					<li>Test the AI's ability to handle unexpected user input.</li>
-					<li>Assess response time for typical customer questions.</li>
-					<li>Check the AI's capability to escalate complex issues to human agents.</li>
+					<li><strong>Order Number</strong>: <code>2001967628</code></li>
+					<li><strong>Snapshot Date</strong>: <code>20250211</code></li>
+					<li><strong>Current Description</strong>: <em>"rescheduled"</em></li>
 				</ul>
-				<p>
-				<h2>Testing Scenarios for Bob's AI Agent</h2>
-				</p>
-				<div id="order_details" class="user_story">
-					<h3>Scenario: Inquiry about Order Details</h3>
-					<ul>
-						<li><strong>User Story:</strong> As a customer, I want to check the details of my order so that I can track its status.</li>
-						<li><strong>Context:</strong> Customer has placed an order and wants to know the current status.</li>
-						<li><strong>Initial User Input:</strong> I want to check the status of my order #123456.</li>
-						<li><strong>Potential Escalation Scenarios:</strong> If the order status is unclear or there are issues with the order, escalate to customer support.</li>
-						<li><strong>Expected Resolution:</strong> Provide the customer with the current status of their order, including delivery updates if applicable.</li>
-						<li><strong>Acceptance Criteria:</strong> The customer receives accurate and detailed order status information.</li>
-					</ul>
-					<div>
-						<button onclick="loadContext('order_details')">Load Context</button>
-					</div>
+				<h3>Header</h3>
+				<ul>
+					<li><code>order_type = ZRAC</code> (often a financing or special arrangement order).</li>
+					<li><code>status = COMPLETE</code> (header-level).</li>
+					<li><code>doc_number = 2001967628</code>, store: <code>252</code>.</li>
+					<li><strong>Total Cost</strong> = <code>3026.99</code> (<code>merch_amt: 2697.00</code> + <code>delv_amt: 329.99</code>).</li>
+					<li><strong>Delivery</strong>: <code>'White Glove'</code>.</li>
+				</ul>
+				<h3>Line Items</h3>
+				<ol>
+					<li><strong>Item 000100</strong>
+						<ul>
+							<li>SKU = <code>000000000020083447</code> (TAP category).</li>
+							<li><code>latest_status_code = FL03</code> ⇒ <em>Delivery scheduled.</em></li>
+							<li>Net value: <code>1998.00</code>.</li>
+							<li><em>Goof Proof</em>: not indicated (<code>goof_proof = null</code>).</li>
+						</ul>
+					</li>
+					<li><strong>Item 000101</strong>
+						<ul>
+							<li>SKU = <code>000000020082984001</code> (TAN).</li>
+							<li><code>latest_status_code = FL03</code>.</li>
+							<li><em>Goof Proof</em>: <code>"02"</code>.</li>
+						</ul>
+					</li>
+					<li><strong>Item 000102</strong>
+						<ul>
+							<li>SKU = <code>000000020082984004</code> (TAN).</li>
+							<li><code>latest_status_code = FL03</code>.</li>
+							<li><em>Goof Proof</em>: <code>"02"</code>.</li>
+						</ul>
+					</li>
+					<li><strong>Item 000200</strong>
+						<ul>
+							<li>SKU = <code>000000020082984003</code> (TAN).</li>
+							<li><code>latest_status_code = FL03</code>.</li>
+							<li><em>Goof Proof</em>: <code>"02"</code>.</li>
+						</ul>
+					</li>
+				</ol>
+				<h3>Scheduling Implications</h3>
+				<p><code>FL03</code> means “Delivery scheduled.” Since this is also in <code>RESCHEDULABLE_STATUSES</code>, <strong>rescheduling</strong> is possible if the user requests a new date.</p>
+
+				<h3>Delivery Options</h3>
+				<ul>
+					<li>We see many potential dates from <code>20250212</code> onward, including:
+						<ul>
+							<li><code>B39</code> with <code>BWB</code> (morning) or <code>C30</code> with <code>RD</code> (all-day).</li>
+							<li><em>Example</em>: <code>20250215, BWB</code> has <code>Remaining_Stops: 1</code> → a morning window slot.</li>
+						</ul>
+						The agent can confirm a new date/time if the user wants to reschedule.
+					</li>
+					<li>Some stops have <code>NDB</code> (possible next-day block?), but the main morning (<code>BWB</code>) vs. all-day (<code>RD</code>) windows matter.</li>
+				</ul>
+
+				<h3>Payment/Block Check</h3>
+				<ul>
+					<li>No sign of partial payment or canceled code.</li>
+					<li><em>No</em> escalations needed.</li>
+				</ul>
+
+				<div class="fixture-conclusion">
+					<strong>Conclusion</strong>: <br>
+					“Rescheduled” scenario with line items at <code>FL03</code> = scheduled. The user can still reschedule if needed.
+					Delivery windows are wide open with some BWB vs. RD stops available.
 				</div>
-				<div id="schedule_delivery" class="user_story">
-					<h3>Scenario: Schedule a Delivery</h3>
-					<ul>
-						<li><strong>User Story:</strong> As a customer, I want to schedule my furniture delivery so that I can plan my day.</li>
-						<li><strong>Context:</strong> Customer needs to select a delivery date and time window.</li>
-						<li><strong>Initial User Input:</strong> I would like to schedule my delivery for next week.</li>
-						<li><strong>Potential Escalation Scenarios:</strong> If the preferred date or time is unavailable, escalate to a delivery specialist.</li>
-						<li><strong>Expected Resolution:</strong> Customer successfully schedules their delivery with confirmation of the date and time window.</li>
-						<li><strong>Acceptance Criteria:</strong> Customer receives confirmation of their scheduled delivery, including any special instructions.</li>
-					</ul>
-					<div>
-						<button onclick="loadContext('schedule_delivery')">Load Context</button>
-					</div>
+
+				<hr />
+
+				<h2>Fixture 2202: <em>Scheduled</em></h2>
+				<h3>Key Highlights</h3>
+				<ul>
+					<li><strong>Order Number</strong>: <code>0403845247</code></li>
+					<li><strong>Snapshot Date</strong>: <code>20250211</code></li>
+					<li><strong>Description</strong>: <em>"scheduled"</em></li>
+				</ul>
+				<h3>Header</h3>
+				<ul>
+					<li><code>order_type = ZRAC</code>.</li>
+					<li><code>status = COMPLETE</code>.</li>
+					<li><code>doc_number = 0403845247</code>, store: <code>136</code>.</li>
+					<li><code>tot_amt = 1455.98</code>, with <code>delv_amt = 179.99</code>.</li>
+				</ul>
+				<h3>Line Items</h3>
+				<ol>
+					<li><strong>Aspen Beige 86'' Left Arm Facing Chofa</strong>
+						<ul>
+							<li><code>latest_status_code = FL03</code> (Delivery scheduled).</li>
+							<li>SKU = <code>000000000020088877</code> → Category <code>TAP</code>.</li>
+							<li><em>Goof Proof</em>: <code>"01"</code>.</li>
+						</ul>
+					</li>
+					<li><strong>Aspen Beige 86'' Sofa</strong>
+						<ul>
+							<li><code>latest_status_code = FL03</code>.</li>
+							<li>SKU = <code>000000020086264006</code> (<code>TAN</code>).</li>
+							<li><em>Goof Proof</em>: <code>"01"</code>.</li>
+						</ul>
+					</li>
+					<li><strong>Lowell Queen Latte Bed</strong>
+						<ul>
+							<li><code>latest_status_code = FL03</code>, <em>Goof Proof = "01"</em>.</li>
+						</ul>
+					</li>
+					<li><strong>Gem 8'' Queen Firm Mattress</strong>
+						<ul>
+							<li><code>FL03</code>, <em>Goof Proof = "02"</em> (might have coverage).</li>
+						</ul>
+					</li>
+					<li><strong>Fitted Queen Mattress Protector</strong>
+						<ul>
+							<li><code>FL03</code>, <em>Goof Proof = "02"</em>.</li>
+						</ul>
+					</li>
+				</ol>
+				<h3>Delivery Options</h3>
+				<ul>
+					<li>Many possible stops. Zones with <code>B81</code> (morning BWB) or <code>C80</code> (all-day RD).</li>
+					<li>Some <code>Remaining_Stops = 0</code> means no capacity that day.</li>
+				</ul>
+				<h3>Scheduling</h3>
+				<p>Already <em>scheduled</em>, but <code>FL03</code> in <code>RESCHEDULABLE_STATUSES</code> → can be changed.</p>
+
+				<div class="fixture-conclusion">
+					<strong>Conclusion</strong>: <br>
+					Fully scheduled. The user can reschedule if needed. No partial payment or canceled codes.
 				</div>
-				<div id="special_request" class="user_story">
-					<h3>Scenario: Special Delivery Instructions</h3>
-					<ul>
-						<li><strong>User Story:</strong> As a customer, I want to provide special instructions for my delivery so that it goes smoothly.</li>
-						<li><strong>Context:</strong> Customer needs to communicate specific requirements for their delivery.</li>
-						<li><strong>Initial User Input:</strong> Please ensure delivery is made through the back entrance.</li>
-						<li><strong>Potential Escalation Scenarios:</strong> If the special request cannot be accommodated, escalate to a delivery specialist.</li>
-						<li><strong>Expected Resolution:</strong> Special instructions are added to the delivery details, and the customer receives confirmation.</li>
-						<li><strong>Acceptance Criteria:</strong> Customer successfully provides special instructions, and they are acknowledged and confirmed.</li>
-					</ul>
-					<div>
-						<button onclick="loadContext('special_request')">Load Context</button>
-					</div>
+
+				<hr />
+
+				<h2>Fixture 2203: <em>Delivered</em></h2>
+				<h3>Key Highlights</h3>
+				<ul>
+					<li><strong>Order Number</strong>: <code>0403748787</code></li>
+					<li><strong>Snapshot Date</strong>: <code>20250211</code></li>
+					<li><strong>Description</strong>: <em>"delivered"</em></li>
+				</ul>
+				<h3>Header</h3>
+				<ul>
+					<li><code>order_type = ZOR</code>.</li>
+					<li><code>status = COMPLETE</code>.</li>
+					<li><code>doc_number = 0403748787</code>, store: <code>162</code>.</li>
+					<li><code>tot_amt = 1511.15</code>.</li>
+				</ul>
+				<h3>Line Items</h3>
+				<ol>
+					<li><strong>Bettie Teal 86'' Sofa</strong>
+						<ul>
+							<li><code>latest_status_code = FL09</code> → <em>Delivered.</em></li>
+							<li>Past shipments show <code>FL04</code> = scheduled window, then <code>FL09</code> = delivered.</li>
+						</ul>
+					</li>
+					<li><strong>Bettie Teal Swivel Chair</strong>
+						<ul>
+							<li>Also <code>FL09</code>, so delivered.</li>
+						</ul>
+					</li>
+					<li><strong>Bettie 60'' Walnut TV Stand</strong>
+						<ul>
+							<li><code>latest_status_code = FL03</code> in item data, set to deliver <code>20250215</code>.</li>
+							<li>Possibly not yet delivered, or partial.</li>
+						</ul>
+					</li>
+				</ol>
+				<h3>Delivery Options</h3>
+				<ul>
+					<li>Lists some stops, but the main items are mostly delivered.</li>
+				</ul>
+				<h3>Scheduling</h3>
+				<ul>
+					<li>If items are at <code>FL09</code>, there is no further scheduling.</li>
+					<li>The stand is <code>FL03</code> (??) might be scheduled for a future date (<code>20250215</code>).</li>
+				</ul>
+
+				<div class="fixture-conclusion">
+					<strong>Conclusion</strong>: <br>
+					The main furniture was delivered on <code>20250122</code>. One line item is upcoming or partially scheduled. Possibly partial completion.
+					The user can’t reschedule the delivered items; the third item is still <code>FL03</code>.
 				</div>
+
+				<hr />
+
+				<h2>Fixture 2204: <em>Can’t Find Order</em></h2>
+				<h3>Key Highlights</h3>
+				<ul>
+					<li><strong>Order Number</strong>: <code>2001978895</code></li>
+					<li><strong>Snapshot Date</strong>: <code>20250211</code></li>
+					<li><strong>Description</strong>: <em>"cant find order"</em></li>
+				</ul>
+				<h3>Header</h3>
+				<ul>
+					<li><code>order_type = ZWEB</code>, store: <code>296</code>.</li>
+					<li><code>status = COMPLETE</code>, doc number: <code>2001978895</code>.</li>
+					<li><code>merch_amt = 499.00</code>, <code>delv_amt = 109.99</code>.</li>
+				</ul>
+				<h3>Line Items</h3>
+				<ul>
+					<li><strong>Brooks Cherry 5 Drawer Chest</strong>
+						<ul>
+							<li><code>latest_status_code = FL03</code> (Delivery scheduled).</li>
+							<li>SKU = <code>000000020086263006</code>, TAN or ZTDP.</li>
+							<li><em>Goof Proof?</em> => <code>"01"</code>.</li>
+						</ul>
+					</li>
+				</ul>
+				<h3>Delivery Options</h3>
+				<ul>
+					<li>Some days have zero stops left, but some have openings.</li>
+				</ul>
+				<h3>Scheduling</h3>
+				<ul>
+					<li>The fixture name suggests an order that might not appear in standard queries. Possibly needs manual resolution.</li>
+					<li>If found, the item is at <code>FL03</code>, so potentially can be rescheduled or confirmed.</li>
+				</ul>
+
+				<div class="fixture-conclusion">
+					<strong>Conclusion</strong>: <br>
+					The data says it’s fully <em>complete</em> with an <code>FL03</code> line. Possibly an internal system mismatch leads to
+					“can’t find order.” The agent might escalate or do a deeper search.
+				</div>
+
+				<hr />
+
+				<h2>Fixture 2206: <em>Not ready for scheduling</em></h2>
+				<h3>Key Highlights</h3>
+				<ul>
+					<li><strong>Order Number</strong>: <code>0403801153</code></li>
+					<li><strong>Snapshot Date</strong>: <code>20250211</code></li>
+					<li><strong>Description</strong>: <em>"not ready for scheduling"</em></li>
+				</ul>
+				<h3>Header</h3>
+				<ul>
+					<li><code>order_type = ZOR</code>, store = <code>246</code>.</li>
+					<li><code>status = COMPLETE</code>, yet items show <code>PR06</code> => Not ready.</li>
+					<li><strong>Payment</strong>: no partial codes beyond <code>PT03</code>, but a key item-level code is <code>PR06</code>.</li>
+				</ul>
+				<h3>Line Items</h3>
+				<ol>
+					<li><strong>Phantom Gray 86'' Power Reclining Sofa (Item 000010)</strong>
+						<ul>
+							<li><code>latest_status_code = PR06</code> => <em>Not ready to schedule</em>.</li>
+							<li>Block: <code>Z4</code> (<em>a schedulable header block</em>), so not the reason for blocking; the real reason is <code>PR06</code>.</li>
+						</ul>
+					</li>
+					<li><strong>Another identical sofa (Item 000020)</strong>
+						<ul>
+							<li>Also <code>PR06</code>.</li>
+						</ul>
+					</li>
+				</ol>
+				<h3>Delivery Options</h3>
+				<ul>
+					<li>Several potential route dates. However, the items themselves are <code>PR06</code> → not ready.</li>
+				</ul>
+
+				<div class="fixture-conclusion">
+					<strong>Conclusion</strong>: <br>
+					The user might want to schedule, but the system says <em>“PR06: Not ready.”</em>
+					We must inform them inventory or production is incomplete. No scheduling is allowed yet.
+				</div>
+
+				<hr />
+
+				<h2>Fixture 2207: <em>Scheduled</em></h2>
+				<h3>Key Highlights</h3>
+				<ul>
+					<li><strong>Order Number</strong>: <code>0403832708</code></li>
+					<li><strong>Snapshot Date</strong>: <code>20250211</code></li>
+					<li><strong>Description</strong>: <em>"scheduled"</em></li>
+				</ul>
+				<h3>Header</h3>
+				<ul>
+					<li><code>order_type = ZOR</code>, store: <code>184</code>.</li>
+					<li><code>tot_amt = 1629.85</code>.</li>
+					<li><code>status = COMPLETE</code>.</li>
+				</ul>
+				<h3>Line Items</h3>
+				<ol>
+					<li><strong>Everly Charcoal Queen Sleeper Sofa</strong>
+						<ul>
+							<li><code>latest_status_code = FL03</code> => scheduled.</li>
+							<li>Net value: <code>1099.00</code>, <em>Goof Proof = "01"</em>.</li>
+						</ul>
+					</li>
+					<li><strong>QNSLP-1001-33… (the internal sleeper piece)</strong>
+						<ul>
+							<li><code>FL03</code>, net value: <code>900</code>.</li>
+						</ul>
+					</li>
+					<li><strong>4.5" Gel Queen Sleeper Mattress</strong>
+						<ul>
+							<li><code>FL03</code>, net value: <code>199</code>.</li>
+						</ul>
+					</li>
+					<li><strong>Sleeper Total Encasement Queen Protector Bundle</strong>
+						<ul>
+							<li><code>FL24</code> => <em>Fulfilled at store</em>, or “take with.”</li>
+							<li>No big scheduling needed for that item.</li>
+						</ul>
+					</li>
+				</ol>
+				<h3>Delivery Options</h3>
+				<ul>
+					<li>Large list: morning (<code>BWB</code>) or all-day (<code>RD</code>).</li>
+				</ul>
+				<div class="fixture-conclusion">
+					<strong>Conclusion</strong>: <br>
+					Everything is “scheduled” for big pieces, some items are “take with.”
+					The user can reschedule if needed since <code>FL03</code> is in reschedulable statuses.
+				</div>
+
+				<hr />
+
+				<h2>Fixture 2208: <em>Material in motion</em></h2>
+				<h3>Key Highlights</h3>
+				<ul>
+					<li><strong>Order Number</strong>: <code>0403842939</code></li>
+					<li><strong>Snapshot Date</strong>: <code>20250211</code></li>
+					<li><strong>Description</strong>: <em>"material in motion"</em></li>
+				</ul>
+				<h3>Header</h3>
+				<ul>
+					<li><code>order_type = ZOR</code>, store: <code>194</code>.</li>
+					<li><code>status = COMPLETE</code>.</li>
+					<li><code>delv_amt = 99.99</code>, <em>Threshold</em> shipping.</li>
+				</ul>
+				<h3>Line Items</h3>
+				<ol>
+					<li><strong>Glamour Queen White Mirrored Panel Bed</strong>
+						<ul>
+							<li>Multi-part: footboard, headboard, rails, etc.</li>
+							<li>Item 000010 has <code>FL03</code>, sub-components have partial shipments with <code>FL04</code> = scheduled.</li>
+							<li>Possibly out for partial shipments or in transit soon.</li>
+						</ul>
+					</li>
+					<li><strong>Queen Foundation (Val-U-Pedic)</strong>
+						<ul>
+							<li>Also <code>FL03</code>, shipments show <code>FL04</code>.</li>
+						</ul>
+					</li>
+				</ol>
+				<h3>Delivery Options</h3>
+				<ul>
+					<li>Large array of potential route dates, but if truly <em>in motion</em>, it might already be <code>FL06</code> or partially so.</li>
+				</ul>
+				<div class="fixture-conclusion">
+					<strong>Conclusion</strong>: <br>
+					The user may have partial shipments in motion. Typically, if we see <code>FL06</code>, it’s “Out for delivery,” but here
+					it’s <code>FL03/FL04</code>. So it’s scheduled or partially in transit. The user might still be able to reschedule if not on the truck.
+				</div>
+
+				<hr />
+
+				<h2>Fixture 2209: <em>Material in motion</em></h2>
+				<h3>Key Highlights</h3>
+				<ul>
+					<li><strong>Order Number</strong>: <code>0403832944</code></li>
+					<li><strong>Snapshot Date</strong>: <code>20250211</code></li>
+					<li><strong>Description</strong>: <em>"material in motion"</em></li>
+				</ul>
+				<h3>Header</h3>
+				<ul>
+					<li><code>order_type = ZOR</code>, store: <code>52</code>.</li>
+					<li><code>merch_amt = 2499.00</code>, <code>delv_amt = 299.99</code>.</li>
+					<li><code>status = COMPLETE</code>.</li>
+				</ul>
+				<h3>Line Items</h3>
+				<ul>
+					<li>Modern Farmhouse Beige 124’’ Sectional, plus sub-components (armless chairs, console, wedge).
+						All show <code>FL03/FL04</code> type statuses or partial shipments:
+						<ul>
+							<li>Some lines have <code>FL04</code> => scheduled window. Possibly <code>FL06</code> if truly out for delivery.</li>
+							<li>Overall, might be in mid-transit or about to be loaded.</li>
+						</ul>
+					</li>
+				</ul>
+				<h3>Delivery Options</h3>
+				<ul>
+					<li>Large sets of stops: some <code>B24</code> with <code>BWB</code> or <code>R07</code> with <code>RD</code>.</li>
+				</ul>
+				<div class="fixture-conclusion">
+					<strong>Conclusion</strong>: <br>
+					“In motion” suggests it might soon be <code>FL06</code>, or partly loaded on a truck. If it’s truly “out for delivery,”
+					the user cannot reschedule. But data shows <code>FL03/FL04</code>, so maybe still reschedulable if needed.
+				</div>
+
+				<hr />
+
+				<h2>Fixture 2210: <em>Material in motion</em> (Service scenario)</h2>
+				<h3>Key Highlights</h3>
+				<ul>
+					<li><strong>Order Number</strong>: <code>0403815473</code></li>
+					<li><strong>Snapshot Date</strong>: <code>20250211</code></li>
+					<li><strong>Description</strong>: <em>"material in motion"</em> but it’s actually a <code>service</code> order (<code>ZSV</code>).</li>
+				</ul>
+				<h3>Header</h3>
+				<ul>
+					<li><code>order_type = ZSV</code>, store: <code>68</code>.</li>
+					<li><code>status = COMPLETE</code>.</li>
+					<li><code>merch_amt = 0.00</code> (no new product cost).</li>
+				</ul>
+				<h3>Line Items</h3>
+				<ol>
+					<li><strong>Bettie Avocado 86'' Chofa</strong> → <code>latest_status_code = FS02</code> = <em>Scheduled for service</em>.</li>
+					<li>Additional lines referencing “Service Time 20 Min.”</li>
+				</ol>
+				<h3>Delivery</h3>
+				<p>“Service by Technician.”</p>
+				<h3>Scheduling</h3>
+				<p><code>FS02</code> is reschedulable. Possibly “in motion” for a service tech.</p>
+				<h3>Delivery Options</h3>
+				<ul>
+					<li>These are <strong>service</strong> stops: <code>AS26</code> (<em>EMS</em>), <code>S26</code> (<em>RD</em>).</li>
+				</ul>
+
+				<div class="fixture-conclusion">
+					<strong>Conclusion</strong>: <br>
+					This is a service call, <em>in motion</em> might mean parts shipped or a tech assigned. The user can reschedule if not already <code>FS03</code>.
+				</div>
+
+				<hr />
+
+				<h2>Fixture 2211: <em>Reschedule service</em></h2>
+				<h3>Key Highlights</h3>
+				<ul>
+					<li><strong>Order Number</strong>: <code>0403801909</code></li>
+					<li><strong>Snapshot Date</strong>: <code>20250211</code></li>
+					<li><strong>Description</strong>: <em>"reschedule service"</em></li>
+				</ul>
+				<h3>Header</h3>
+				<ul>
+					<li><code>order_type = ZSV</code>, store: <code>120</code>.</li>
+					<li><code>status = COMPLETE</code>.</li>
+				</ul>
+				<h3>Line Items</h3>
+				<ul>
+					<li>Modular Bob™ Spa Blue 117'' 5 Piece Sectional → <code>FS02</code> = <em>Scheduled for service</em>.</li>
+					<li>Additional armless chairs as well. Sched date: <code>20250220</code>.</li>
+				</ul>
+				<h3>Delivery Options</h3>
+				<ul>
+					<li><code>AS51</code>, <code>S51</code>, etc., show <code>EMS</code> vs. <code>RD</code> routes. Some are 0 stops left or open.</li>
+				</ul>
+
+				<div class="fixture-conclusion">
+					<strong>Conclusion</strong>: <br>
+					A service order at <code>FS02</code>. The user can “reschedule service.”
+				</div>
+
+				<hr />
+
+				<h2>Fixture 2212: <em>Needs ATP Reminder</em></h2>
+				<h3>Key Highlights</h3>
+				<ul>
+					<li><strong>Order Number</strong>: <code>0403766414</code></li>
+					<li><strong>Snapshot Date</strong>: <code>20250211</code></li>
+					<li><strong>Description</strong>: <em>"needs atp reminder"</em></li>
+				</ul>
+				<h3>Header</h3>
+				<ul>
+					<li><code>order_type = ZOR</code>, store: <code>128</code>.</li>
+					<li><code>status = COMPLETE</code>, total: <code>2203.73</code>.</li>
+				</ul>
+				<h3>Line Item</h3>
+				<p>Pacifica Gray 114'' 3-Piece Sectional, <code>FL03</code>, but user might not see actual stops to schedule.</p>
+
+				<h3>Delivery Options</h3>
+				<ul>
+					<li>Data says <code>Status_Code = 08</code>, “No STOPs available.” So even if <code>FL03</code> or “ready,” the system shows no capacity.</li>
+				</ul>
+				<div class="fixture-conclusion">
+					<strong>Conclusion</strong>: <br>
+					The user may want to schedule, but no routes are open. They need an “ATP” reminder or to wait for capacity.
+				</div>
+
+				<hr />
+
+				<h2>Fixture 2213: <em>Needs ATP - maybe, UI seems ready to schedule</em></h2>
+				<h3>Key Highlights</h3>
+				<ul>
+					<li><strong>Order Number</strong>: <code>2001974147</code></li>
+					<li><strong>Snapshot Date</strong>: <code>20250211</code></li>
+					<li><strong>Description</strong>: <em>"needs atp - maybe"</em></li>
+				</ul>
+				<h3>Header</h3>
+				<ul>
+					<li><code>order_type = ZWEB</code>, store: <code>172</code>.</li>
+					<li><code>status = COMPLETE</code>.</li>
+					<li>The main line item: Kylie Gray 70'' Loveseat, code = <code>FL02</code> = “Ready for delivery scheduling.”</li>
+				</ul>
+				<h3>Line Item</h3>
+				<ul>
+					<li>One line: <code>FL02</code> => scheduling is definitely possible.</li>
+					<li><code>avail_dt = 20250310</code> => product arrives or is in stock then.</li>
+					<li><code>item_block = "Z4"</code> is a schedulable block.</li>
+				</ul>
+				<h3>Delivery Options</h3>
+				<ul>
+					<li><strong>Zone</strong>: <code>C91</code>, <em>RD</em> => some stops left on <code>20250220</code> or <code>20250306</code>.</li>
+				</ul>
+				<div class="fixture-conclusion">
+					<strong>Conclusion</strong>: <br>
+					The user is <em>ready to schedule</em> (<code>FL02</code>) but the availability date is still a month away. Possibly schedule after <code>20250310</code>.
+					The fixture suggests it’s near scheduling, with partial stops displayed.
+				</div>
+
 			</div>
 		</section>
 
@@ -325,7 +786,7 @@
 			</ul>
 			<p>This roadmap ensures the AI agent evolves to meet customer needs and aligns with Bob’s commitment to exceptional service.</p>
 		</section>
-		
+
 
 	</main>
 
