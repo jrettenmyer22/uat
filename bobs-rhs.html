@@ -1,6 +1,6 @@
 <html>
   <head>
-    <script type="text/javascript" src="https://bobs-stage.goquiq.com/app/ui-extensions/sdk.js"></script>
+    <script type="text/javascript" src="https://bobs.goquiq.com/app/ui-extensions/sdk.js"></script>
   </head>
   <style>
     body { 
@@ -17,6 +17,12 @@
     }
     main {
       width: 94%;
+    }
+    .summary {
+	padding: 10px;
+    }
+    .data {
+	padding: 3px 10px;
     }
   </style>
   <body>
@@ -35,7 +41,7 @@
         console.log('state', data)
         const extState = data.assistState.extensionState
         
-        if (extState.summary) {
+        if (extState && extState.summary) {
           const content = document.querySelector("#content")
           content.innerHTML = extState.summary
         }
@@ -43,3 +49,4 @@
     </script>
   </body>
 </html>
+
