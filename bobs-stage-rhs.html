@@ -35,7 +35,7 @@
         console.log('state', data)
         const extState = data.assistState.extensionState
         
-        if (extState.summary) {
+        if (extState && extState.summary) {
           const content = document.querySelector("#content")
           content.innerHTML = extState.summary
         }
