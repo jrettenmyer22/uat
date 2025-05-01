@@ -47,14 +47,16 @@
     <script>
       const tenant = "bobs";
       const render = (data) => {
-	  if (data.assistState && data.assistState.extensionState) { 
-	      const extState = data.assistState.extensionState
-              if (extState && extState.summary) {
-		  const content = document.querySelector("#content")
-		  content.innerHTML = extState.summary
-              }
-	  }
-      }
+	  data = data.conversation ? data.conversation : data;
+	  const {
+	      assistState: {
+		  extensionState: {
+		      summary = ''
+		  } = []
+	      } ={}
+	  } = data;
+	  document.querySelector("#content").innerHTML = summary
+      };
       Quiq.init(`https://${tenant}.goquiq.com`);
       Quiq.on("init", render)
       Quiq.on('assistStateChanged', render)
