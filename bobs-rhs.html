@@ -47,11 +47,13 @@
     <script>
       const tenant = "bobs";
       const render = (data) => {
-	  const extState = data.assistState.extensionState
-          if (extState && extState.summary) {
-              const content = document.querySelector("#content")
-              content.innerHTML = extState.summary
-          }
+	  if (data.assistState && data.assistState.extensionState) { 
+	      const extState = data.assistState.extensionState
+              if (extState && extState.summary) {
+		  const content = document.querySelector("#content")
+		  content.innerHTML = extState.summary
+              }
+	  }
       }
       Quiq.init(`https://${tenant}.goquiq.com`);
       Quiq.on("init", render)
