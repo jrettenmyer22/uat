@@ -23,9 +23,10 @@
     }
     .data {
 	padding: 0px 10px;
+	display: flex;
     }
     .data label, .data span {
-	width: 100px;
+	min-width: 92px;
 	display: inline-block;
         padding: 2px;
 	color: #999;
@@ -34,7 +35,8 @@
 	font-size: .85em;
     }
     .data span {
-	width: 200px;         
+	min-width: 200px;
+        flex-grow: 1;
     }
   </style>
   <body>
@@ -44,19 +46,21 @@
     </div>  
     <script>
       const tenant = "bobs";
+      const render = (data) => {
+	  const extState = data.assistState.extensionState
+          if (extState && extState.summary) {
+              const content = document.querySelector("#content")
+              content.innerHTML = extState.summary
+          }
+      }
       Quiq.init(`https://${tenant}.goquiq.com`);
-      Quiq.on("init", function (context) {
-        console.log('cid', context.conversation)
-      });
-      
-      Quiq.on('assistStateChanged', function(data) {
+      Quiq.on("init", (context) => {
+          console.log('cid', context.conversation)
+	  render()
+      });      
+      Quiq.on('assistStateChanged', (data) => {
         console.log('state', data)
-        const extState = data.assistState.extensionState
-        
-        if (extState && extState.summary) {
-          const content = document.querySelector("#content")
-          content.innerHTML = extState.summary
-        }
+          render()
       })
     </script>
   </body>
