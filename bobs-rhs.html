@@ -54,14 +54,8 @@
           }
       }
       Quiq.init(`https://${tenant}.goquiq.com`);
-      Quiq.on("init", (context) => {
-          console.log('cid', context.conversation)
-	  render()
-      });      
-      Quiq.on('assistStateChanged', (data) => {
-        console.log('state', data)
-          render()
-      })
+      Quiq.on("init", render)
+      Quiq.on('assistStateChanged', render)
     </script>
   </body>
 </html>
