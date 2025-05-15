@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://urbn-stage.goquiq.com/app/ui-extensions/sdk.js"></script>
+  </head>
+  <style>
+    body { 
+      margin:0;
+      font-family: system-ui;
+      font-size: 14px;
+    }
+    h3 {
+      font-weight: 500;
+      margin: 12px 0;
+    }
+    a {
+      color: #4A90E2;
+    }
+    main {
+      width: 94%;
+    }
+    .summary {
+	padding: 10px;
+    }
+    .data {
+	padding: 3px 10px;
+    }
+  </style>
+  <body>
+    <div id="main-div">
+      <div id="content">
+      </div>
+    </div>  
+    <script>
+      const tenant = "urbn-stage";
+      Quiq.init(`https://${tenant}.goquiq.com`);
+      Quiq.on("init", function (context) {
+        console.log('cid', context.conversation)
+      });
+      
+      Quiq.on('assistStateChanged', function(data) {
+        console.log('state', data)
+        const extState = data.assistState.extensionState
+        
+        if (extState && extState.summary) {
+          const content = document.querySelector("#content")
+          content.innerHTML = extState.summary
+        }
+      })
+    </script>
+  </body>
+</html>
