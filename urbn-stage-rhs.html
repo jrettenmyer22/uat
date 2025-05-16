@@ -33,18 +33,37 @@
     <script>
       const tenant = "urbn-stage";
       Quiq.init(`https://${tenant}.goquiq.com`);
-      Quiq.on("init", function (context) {
-        console.log('cid', context.conversation)
+      
+      function react(data) {
+        const assState = data.assistState;
+        
+        if (assState) {
+          const extState = data.assistState.extensionState;
+          
+          if (extState && extState.summary) {
+            const content = document.querySelector("#content")
+            content.innerHTML = extState.summary
+          }
+          const button = document.getElementById('createReplacementOrder');
+          console.log(button)
+          
+          if (button && (!button.eventListenerList || !button.eventListenerList.some(listener => listener.type === 'click'))) {
+            button.addEventListener('click', function() {
+              console.log('test');
+              Quiq.updateField("schema.conversation.custom.assistActionTrigger", "createReplacementOrder");
+              button.disabled = true;
+            })
+          }
+        }
+      }
+      Quiq.on("init", function (data) {
+        console.log('cid', data.conversation)
+        react(data.conversation)
       });
       
       Quiq.on('assistStateChanged', function(data) {
         console.log('state', data)
-        const extState = data.assistState.extensionState
-        
-        if (extState && extState.summary) {
-          const content = document.querySelector("#content")
-          content.innerHTML = extState.summary
-        }
+        react(data)
       })
     </script>
   </body>
