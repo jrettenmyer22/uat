@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://demo16.goquiq.com/app/ui-extensions/sdk.js"></script>
+  </head>
+  <style>
+    body { 
+      margin:0;
+      font-family: system-ui;
+      font-size: 14px;
+    }
+    h3 {
+      font-weight: 500;
+      margin: 12px 0;
+    }
+    a {
+      color: #4A90E2;
+    }
+    main {
+      width: 94%;
+    }
+    .summary {
+	padding: 10px;
+    }
+    .data {
+	padding: 3px 10px;
+    }
+  </style>
+  <body>
+    <div id="main-div">
+      <div id="content">
+      </div>
+    </div>  
+    <script>
+      const tenant = "demo16";
+      Quiq.init(`https://${tenant}.goquiq.com`);
+      
+      function react(data) {
+        const assState = data.assistState;
+        
+        if (assState) {
+          const extState = data.assistState.extensionState;
+          
+          if (extState && extState.summary) {
+            const content = document.querySelector("#content")
+            content.innerHTML = extState.summary
+          }
+          const button = document.getElementById('createReplacementOrder');
+          console.log(button)
+          
+          if (button && (!button.eventListenerList || !button.eventListenerList.some(listener => listener.type === 'click'))) {
+            button.addEventListener('click', function() {
+              console.log('test');
+              Quiq.updateField("schema.conversation.custom.assistActionTrigger", "createReplacementOrder");
+              button.disabled = true;
+            })
+          }
+        }
+      }
+      Quiq.on("init", function (data) {
+        console.log('cid', data.conversation)
+        react(data.conversation)
+      });
+      
+      Quiq.on('assistStateChanged', function(data) {
+        console.log('state', data)
+        react(data)
+      })
+    </script>
+  </body>
+</html>

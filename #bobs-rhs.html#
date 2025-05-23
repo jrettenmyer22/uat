@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://bobs.goquiq.com/app/ui-extensions/sdk.js"></script>
+  </head>
+  <style>
+    body { 
+      margin:0;
+      font-family: system-ui;
+      font-size: 14px;
+    }
+    h3 {
+      font-weight: 500;
+      margin: 12px 0;
+    }
+    a {
+      color: #4A90E2;
+    }
+    main {
+      width: 94%;
+    }
+    .summary {
+	padding: 10px;
+    }
+    .data {
+	padding: 0px 10px;
+	display: flex;
+    }
+    .data label, .data span {
+	min-width: 92px;
+	display: inline-block;
+        padding: 2px;
+	color: #999;
+	background: #f5f5f5;
+	border: 1px solid #ddd;
+	font-size: .85em;
+    }
+    .data span {
+	min-width: 200px;
+        flex-grow: 1;
+    }
+  </style>
+  <body>
+    <div id="main-div">
+      <div id="content">
+      </div>
+    </div>  
+    <script>
+      const tenant = "bobs";
+      const render = (data) => {
+	  data = data.conversation ? data.conversation : data;
+	  const {
+	      assistState: {
+		  extensionState: {
+		      summary = ''
+		  } = [],
+	      } = {},
+	  } = data;
+	  document.querySelector("#content").innerHTML = summary
+      };
+      Quiq.init(`https://${tenant}.goquiq.com`);
+      Quiq.on("init", render)
+      Quiq.on('assistStateChanged', render)
+    </script>
+  </body>
+</html>
+
